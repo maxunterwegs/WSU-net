@@ -1,0 +1,22 @@
+name_infix: Saliency_inference
+output_dir: /media/data1/max_m/thesis/RSNA/saliencymap
+code_base: ['*.py']
+devices: '1'
+
+running_type: normal
+model_type: unet
+load_pretrained: true
+best_model_dir: /media/data1/max_m/thesis/RSNA/saliencymap/SaliencyMaps_191004-191205/models/best.pth.tar
+split_names: val_hot_1000_3.csv
+
+model_params:
+  img_shape: [512, 512]
+  num_classes: 3
+  dropout_rate_1: 0.25
+  dropout_rate_2: 0.5
+
+train:
+  batch_size: 1
+
+val:
+  metrics: [accuracy]
